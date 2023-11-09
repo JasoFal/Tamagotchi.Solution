@@ -1,12 +1,19 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using Tamagotchi.Models;
+using System;
 
 namespace Tamagotchi.Tests
 {
   [TestClass]
-  public class PetTests
+  public class PetTests : IDisposable
   {
+
+    public void Dispose()
+    {
+      Pet.ClearAll();
+    }
+
     [TestMethod]
     public void PetConstructor_CreateInstanceOfPet_Pet()
     {
@@ -42,7 +49,16 @@ namespace Tamagotchi.Tests
       CollectionAssert.AreEqual(newList, result);
     }
     
-    // [TestMethod]
-    // public void GetAll_ReturnPets_PetList
+    [TestMethod]
+    public void GetAll_ReturnPets_PetList()
+    {
+      string pet01 = "Dimbo";
+      string pet02 = "Zeeb";
+      Pet newTamagotchi01 = new Pet(pet01);
+      Pet newTamagotchi02 = new Pet(pet02);
+      List<Pet> newPetList = new List<Pet> { newTamagotchi01, newTamagotchi02 };
+      List<Pet> result =  Pet.GetAll();
+      CollectionAssert.AreEqual(newPetList, result);
+    }
   }
 }
