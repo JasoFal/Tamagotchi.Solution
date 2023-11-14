@@ -7,12 +7,14 @@ namespace Tamagotchi.Models
     public string PetName { get; set; }
     public int Id { get; }
     public int PetFood { get; }
+    public int PetRest { get; }
     private static List<Pet> _instances = new List<Pet> { };
 
     public Pet(string name)
     {
       PetName = name;
       PetFood = 100;
+      PetRest = 100;
       _instances.Add(this);
       Id = _instances.Count;
     }

@@ -89,5 +89,17 @@ namespace Tamagotchi.Tests
       int result = newTamagotchi.PetFood;
       Assert.AreEqual(100, result);
     }
+
+    [TestMethod]
+    public void GetPetRest_ReturnPetRest_Int()
+    {
+      string pet = "Zeeb";
+      Pet newTamagotchi = new Pet(pet);
+      int result = newTamagotchi.PetRest;
+      Assert.AreEqual(100, result);
+    }
+
+    [TestMethod]
+    
   }
 }
