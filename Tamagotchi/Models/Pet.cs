@@ -24,5 +24,10 @@ namespace Tamagotchi.Models
     {
       _instances.Clear();
     }
+
+    public static Pet Find(int searchId)
+    {
+      return _instances[searchId-1];
+    }
   }
 }

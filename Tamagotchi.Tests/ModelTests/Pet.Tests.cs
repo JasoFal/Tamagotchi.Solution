@@ -71,6 +71,14 @@ namespace Tamagotchi.Tests
     }
 
     [TestMethod]
-    public 
+    public void Find_ReturnCorrectPet_Pet()
+    {
+      string pet01 = "Zeeb";
+      string pet02 = "Dimbo";
+      Pet newTamagotchi01 = new Pet(pet01);
+      Pet newTamagotchi02 = new Pet(pet02);
+      Pet result = Pet.Find(2);
+      Assert.AreEqual(newTamagotchi02, result);
+    }
   }
 }
