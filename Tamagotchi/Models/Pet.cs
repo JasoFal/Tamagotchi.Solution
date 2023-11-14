@@ -5,12 +5,14 @@ namespace Tamagotchi.Models
   public class Pet
   {
     public string PetName { get; set; }
+    public int Id { get; }
     private static List<Pet> _instances = new List<Pet> { };
 
     public Pet(string name)
     {
       PetName = name;
       _instances.Add(this);
+      Id = _instances.Count;
     }
 
     public static List<Pet> GetAll()

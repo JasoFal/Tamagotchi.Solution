@@ -60,5 +60,17 @@ namespace Tamagotchi.Tests
       List<Pet> result =  Pet.GetAll();
       CollectionAssert.AreEqual(newPetList, result);
     }
+
+    [TestMethod]
+    public void GetId_ItemsInstantiateWithAnIdAndGetterReturns_Int()
+    {
+      string petName = "Zeeb";
+      Pet newTamagotchi = new Pet(petName);
+      int result = newTamagotchi.Id;
+      Assert.AreEqual(1, result);
+    }
+
+    [TestMethod]
+    public 
   }
 }
