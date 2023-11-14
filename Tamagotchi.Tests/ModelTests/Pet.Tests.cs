@@ -100,6 +100,12 @@ namespace Tamagotchi.Tests
     }
 
     [TestMethod]
-    
+    public void GetPetAttention_ReturnPetAttention_Int()
+    {
+      string pet = "Bumbo";
+      Pet newTamagotchi = new Pet(pet);
+      int result = newTamagotchi.PetAttention;
+      Assert.AreEqual(100, result);
+    }
   }
 }

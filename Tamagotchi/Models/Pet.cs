@@ -8,6 +8,7 @@ namespace Tamagotchi.Models
     public int Id { get; }
     public int PetFood { get; }
     public int PetRest { get; }
+    public int PetAttention { get; }
     private static List<Pet> _instances = new List<Pet> { };
 
     public Pet(string name)
@@ -15,6 +16,7 @@ namespace Tamagotchi.Models
       PetName = name;
       PetFood = 100;
       PetRest = 100;
+      PetAttention = 100;
       _instances.Add(this);
       Id = _instances.Count;
     }
