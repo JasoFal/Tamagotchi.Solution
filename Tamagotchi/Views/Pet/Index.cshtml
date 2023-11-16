@@ -13,9 +13,9 @@
     @using Tamagotchi.Models;
     <h1>Your Tamagotchi</h1>
     <ul>
-      @foreach (Pet tamagotchi in Model)
+      @foreach (Pet pet in Model)
       {
-        <li>@tamagotchi.PetName</li>
+        <li><a href='/pet/@pet.Id'>@pet.PetName</a></li>
       }
     </ul>
     <a href="/pet/new">Add a new Tamagotchi.</a>
